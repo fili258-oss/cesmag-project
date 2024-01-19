@@ -9,13 +9,20 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'assets/imgs/LogoCesmag.svg' %}" />
+    {% block css %}
 
+    {% endblock %}
 </head>
 <body>    
     {% include "layouts/header.html" %}
+
     {% block content %} 
-        <h1>Este es el espacio del contenido</h1>
+        
     {% endblock %}
     <script src="{% static '/assets/js/main.js' %}"></script>
+    {% block js %}
+
+    {% endblock %}
+    {% include "layouts/footer.html" %}
 </body>
 </html>
