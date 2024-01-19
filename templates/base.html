@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/styles/main.css' %}">
+    <title>{% block title %} Cesmag Jobs | Encuentra tu primer empleo {% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/imgs/LogoCesmag.svg' %}" />
+
+</head>
+<body>    
+    {% include "layouts/header.html" %}
+    {% block content %} 
+        <h1>Este es el espacio del contenido</h1>
+    {% endblock %}
+    <script src="{% static '/assets/js/main.js' %}"></script>
+</body>
+</html>
