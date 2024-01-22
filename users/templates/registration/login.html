@@ -7,7 +7,7 @@ Cesmag Jobs | Ingreso de egresados
 {% block css %}
 <style>
 .login {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .bg-image {
@@ -38,22 +38,28 @@ Cesmag Jobs | Ingreso de egresados
           <div class="container">
             <div class="row">
               <div class="col-md-9 col-lg-8 mx-auto">
-                <h1 class="login-heading mb-4">¡Benvenido Egresado!</h1>
+                <h1 class="login-heading mb-4">Ingrese a su cuenta</h1>
                 <!-- Sign In Form -->
-                <form>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{error}}
                     <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email">
-                    <label for="floatingInput">Correo electrónico</label>
+                    <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Ingrese su usuario">
+                    <label for="floatingInput">Usuario</label>
                     </div>
                     <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña">
+                    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Ingrese su contraseña">
                     <label for="floatingPassword">Contraseña</label>
                     </div>                
                     <div class="d-grid">
-                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Ingresar</button>
+                    <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Ingresar</button>                    
+                    <input type="hidden" name="next" value="{{ next }}">
                     <div class="text-center">
-                        <a class="small" href="#">¿No tienes una cuenta?</a>
+                        <a class="small" href="{% url 'registerCompany' %}">Registrate como empresa</a>
                     </div>
+                    <div class="text-center">
+                      <a class="small" href="{% url 'registerApplicant' %}">Registrate como egresado</a>
+                  </div>
                     </div>
 
                 </form>                  

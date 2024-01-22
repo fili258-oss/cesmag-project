@@ -7,13 +7,13 @@ Cesmag Jobs | Bienvenido a Cesmag Jobs
 {% block css %}
 <style>
 .login {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .bg-image {
-  background-image: url("{% static '/assets/imgs/home/WorkBanner.jpg' %}");
-  background-size: cover;
-  background-position: center;
+    background-image: url("{% static '/assets/imgs/home/WorkBanner.jpg' %}");
+    background-size: cover;
+    background-position: center;
 }
 
 .login-heading {
@@ -38,7 +38,7 @@ Cesmag Jobs | Bienvenido a Cesmag Jobs
           <div class="container">
             <div class="row">
               <div class="col-md-9 col-lg-8 mx-auto">
-                <h1 class="login-heading mb-4">¡Benvenido a Cesmag Jobs!</h1>
+                <h1 class="login-heading mb-4">Cesmag Jobs 💼</h1>
                 <ul>
                     <li>
                         <p>Ofrecer las mejores opciones de empleo especializadas en el area de sistemas</p>
@@ -50,13 +50,13 @@ Cesmag Jobs | Bienvenido a Cesmag Jobs
                         <p>Añade tu perfil como empresa para promocionar tus vacanes disponibles</p>
                     </li>
                 </ul>
-                <div class="row justify-content-evenly">
+                <div class="row justify-content-start">
                     <div class="col-6">
-                        <a href="{% url 'loginApplicants' %}" class="btn btn-primary btn-lg">Soy egresado</a>
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Empezar</a>
                     </div>
-                    <div class="col-6">
+                    <!--<div class="col-6">
                       <a href="{% url 'loginCompanies' %}" class="btn btn-primary btn-lg">Soy empresa</a>
-                    </div>
+                    </div>-->
                     
                 </div>                  
               </div>
