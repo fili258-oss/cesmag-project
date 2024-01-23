@@ -39,49 +39,50 @@ Cesmag Jobs | Registro de empresas
             <div class="row">
               <div class="col-md-9 col-lg-8 mx-auto">
                 <h2 class="login-heading mb-4">Registrate como Empresa</h2>
-                <!-- Sign In Form -->
-                <form action="" method="POST">
+                {% if error %}
+                  <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                  </div>
+                {% endif %}
+                <!-- Registro de empresas -->
+                <form method="POST">
+                  {% csrf_token %}
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="companyname" type="text" placeholder="companyname" data-sb-validations="required" />
+                    <input class="form-control" name="companyname" id="companyname" type="text" placeholder="companyname" data-sb-validations="required" />
                     <label for="companyname">Nombre empresa</label>
                     <div class="invalid-feedback" data-sb-feedback="companyname:required">Nombre de empresa es requerido.</div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="countrycompany" type="text" placeholder="countrycompany" data-sb-validations="required" />
+                    <input class="form-control" name="countrycompany" id="countrycompany" type="text" placeholder="countrycompany" data-sb-validations="required" />
                     <label for="countrycompany">País empresa</label>
                     <div class="invalid-feedback" data-sb-feedback="countrycompany:required">País de empresa es requerido.</div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="depcompany" type="text" placeholder="depcompany" data-sb-validations="required" />
+                    <input class="form-control" name="depcompany" id="depcompany" type="text" placeholder="depcompany" data-sb-validations="required" />
                     <label for="depcompany">Departamento empresa</label>
                     <div class="invalid-feedback" data-sb-feedback="depcompany:required">Departamento de empresa es requerido.</div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="citycompany" type="text" placeholder="citycompany" data-sb-validations="required" />
+                    <input class="form-control" name="citycompany" id="citycompany" type="text" placeholder="citycompany" data-sb-validations="required" />
                     <label for="citycompany">Ciudad empresa</label>
                     <div class="invalid-feedback" data-sb-feedback="citycompany:required">Ciudad de empresa es requerido.</div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="phonecompany" type="text" placeholder="phonecompany" data-sb-validations="required" />
+                    <input class="form-control" name="phonecompany" id="phonecompany" type="text" placeholder="phonecompany" data-sb-validations="required" />
                     <label for="phonecompany">Teléfono</label>
                     <div class="invalid-feedback" data-sb-feedback="phonecompany:required">Telefono es requerido.</div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="username" type="text" placeholder="username" data-sb-validations="required" />
-                    <label for="username">Usuario</label>
-                    <div class="invalid-feedback" data-sb-feedback="username:required">Name is required.</div>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Ingrese su contraseña">
+                    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Ingrese su contraseña">
                     <label for="floatingPassword">Contraseña</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email">
+                    <input type="email" class="form-control" name="email" id="floatingInput" placeholder="Ingrese su email">
                     <label for="floatingInput">Correo electrónico</label>
                   </div>
                                   
                   <div class="d-grid">
-                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Registrarme</button>
+                    <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Registrarme</button>
                   <div class="text-center">
                     <p class="small">¿Ya tienes una cuenta?</p>
                     <a class="small" href="{% url 'login' %}">Ingresa aquí</a>

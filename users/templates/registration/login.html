@@ -40,12 +40,16 @@ Cesmag Jobs | Ingreso de egresados
               <div class="col-md-9 col-lg-8 mx-auto">
                 <h1 class="login-heading mb-4">Ingrese a su cuenta</h1>
                 <!-- Sign In Form -->
+                {% if error %}
+                  <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                  </div>
+                {% endif %}                
                 <form action="" method="POST">
-                    {% csrf_token %}
-                    {{error}}
+                    {% csrf_token %}                    
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Ingrese su usuario">
-                    <label for="floatingInput">Usuario</label>
+                    <input type="text" class="form-control" name="email" id="floatingInput" placeholder="Ingrese su correo">
+                    <label for="floatingInput">Correo electrónico</label>
                     </div>
                     <div class="form-floating mb-3">
                     <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Ingrese su contraseña">
